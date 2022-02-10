@@ -1,4 +1,4 @@
-# react-netflix-clone-course
+# Nathan DEMURU
 
 ## Features
 
