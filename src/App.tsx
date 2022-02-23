@@ -1,46 +1,52 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios'
-import {Route, BrowserRouter, Routes} from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import List from "./pages/List";
-import Movies from "./pages/Movies";
-import Series from "./pages/Series";
-import Login from "./pages/Login";
-import WhosWatching from "./pages/WhosWatching";
-import Layout from "./pages/Layout";
-import ErrorPage from "./pages/ErrorPage";
-import ReactDOM from "react-dom";
+/* eslint-disable import/no-anonymous-default-export */
+import React from 'react';
+import Login from './pages/Login';
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes,
+    Link
+} from "react-router-dom";
+import { increment} from './app/reducer'; 
+import { useAppSelector, useAppDispatch } from './app/hooks'; 
+import Profil from './components/ProfilSelection'; 
+import { useSelector } from 'react-redux';
+import { Button } from '@mui/material';
+import NotFoundPage from './pages/NotFoundPage';
+import HomePage from './pages/HomePage';
+import Register from './pages/Register';
+import BrowsePage from './pages/BrowsePage';
 
-function App() {
-    const [films, getFilms] = useState('');
-    useEffect(() => {getAllFilms();
-
-        async function getAllFilms() {
-            const response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=29f2c469151dc76d99011fe3693cb6a2");
-            const data = await response.json();
-            getFilms(data);
-
-            console.log(data)
-        }
-    }, []);
-
+export default () => { 
+    const {value, test} = useAppSelector((state) => state.counter) 
+    const dispatch = useAppDispatch() 
+    
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Layout  />}>
-                    <Route index element={<Homepage />} />
-                    <Route path="series" element={<Series />} />
-                    <Route path="films" element={<Movies />} />
-                    <Route path="list" element={<List />} />
-                    <Route path="login" element={<Login />} />
-                    <Route path="who's-watching" element={<WhosWatching />} />
-                    <Route path="*" element={<ErrorPage />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <Router>
+            <div>
+                <ul>
+                    <li>
+                        <Link to="/">{value}{test}</Link>
+                        <Button onClick={() => dispatch(increment())}>TEST</Button>
+                    </li>
+                    <li>
+                        <Link to="/login">login</Link>
+                    </li>
+                    <li>
+                        <Link to="/profil">profil</Link>
+                    </li>
+                </ul>
+                <Routes >
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/browse' element={<BrowsePage />} />
+                    <Route path='/register' element={<Register />} />
+                    <Route path='/profil' element={<Profil />} />
+                    <Route path='*' element={<NotFoundPage />} />
+                </Routes >
+            </div>
+        </Router>
     );
-}
 
-export default App;
 
-ReactDOM.render(<App />, document.getElementById("root"));
+}  
