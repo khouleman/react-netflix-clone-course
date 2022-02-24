@@ -7,39 +7,35 @@ import {
     Routes,
     Link
 } from "react-router-dom";
-import { increment} from './app/reducer'; 
-import { useAppSelector, useAppDispatch } from './app/hooks'; 
-import Profil from './components/ProfilSelection'; 
+import { increment} from './app/reducer';
+import { useAppSelector, useAppDispatch } from './app/hooks';
+import Profil from './components/ProfilSelection';
 import { useSelector } from 'react-redux';
 import { Button } from '@mui/material';
 import NotFoundPage from './pages/NotFoundPage';
 import HomePage from './pages/HomePage';
 import Register from './pages/Register';
 import BrowsePage from './pages/BrowsePage';
+import WhosWatching from "./components/WhosWatching/WhosWatching";
 
-export default () => { 
-    const {value, test} = useAppSelector((state) => state.counter) 
-    const dispatch = useAppDispatch() 
-    
+export default () => {
+
     return (
         <Router>
             <div>
-                <ul>
-                    <li>
-                        <Link to="/">{value}{test}</Link>
-                        <Button onClick={() => dispatch(increment())}>TEST</Button>
-                    </li>
-                    <li>
-                        <Link to="/login">login</Link>
-                    </li>
-                    <li>
-                        <Link to="/profil">profil</Link>
-                    </li>
-                </ul>
+                {/*<ul>*/}
+                {/*    <li>*/}
+                {/*        <Link to="/login">login</Link>*/}
+                {/*    </li>*/}
+                {/*    <li>*/}
+                {/*        <Link to="/profil">profil</Link>*/}
+                {/*    </li>*/}
+                {/*</ul>*/}
                 <Routes >
                     <Route path='/' element={<HomePage />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/browse' element={<BrowsePage />} />
+                    <Route path='/who-is-watching' element={<WhosWatching />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/profil' element={<Profil />} />
                     <Route path='*' element={<NotFoundPage />} />
@@ -49,4 +45,4 @@ export default () => {
     );
 
 
-}  
+}

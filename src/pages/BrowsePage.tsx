@@ -4,34 +4,63 @@ import Logo from '../components/Header/Logo';
 import styled from 'styled-components';
 import Requests from '../components/Requests/Requests';
 import RowShow from '../components/DisplayShow/RowShow';
+import {useNavigate} from "react-router-dom";
+import Banner from "../components/Banner/Banner";
+
 
 const BrowsePage = () => {
+
+    const navigate = useNavigate();
+
+    function handleClickHome() {
+        navigate('/browse');
+    }
+
+    function handleClickSeries() {
+        navigate('/series');
+    }
+
+    function handleClickMovies() {
+        navigate('/movies');
+    }
+
+    function handleClickNew() {
+        navigate('/most-watched');
+    }
+
+    function handleClickMyList() {
+        navigate('/my-list');
+    }
+
+    console.log(Requests)
 
     return (
         <>
             <BrowserHeader>
+
                 <BrowseNavbar>
-                    <Logo />
-                    <HeaderLink  >Films</HeaderLink>
-                    <HeaderLink  >Series</HeaderLink>
+                    <Logo/>
+                    <HeaderLink onClick={handleClickHome}>Home</HeaderLink>
+                    <HeaderLink onClick={handleClickSeries}>Series</HeaderLink>
+                    <HeaderLink onClick={handleClickMovies}>Movies</HeaderLink>
+                    <HeaderLink onClick={handleClickNew}>Most watched new releases</HeaderLink>
+                    <HeaderLink onClick={handleClickMyList}>My list</HeaderLink>
+
                 </BrowseNavbar>
-                <div>
-                    <Title>Regarder South Park maintenant</Title>
-                    <SubTitle>
-                        Dans cette sitcom satirique, quatre gamins insolents tournent joyeusement en ridicule célébrités et autres personnalités politiques.
-                    </SubTitle>
-                    <PlayButton onClick={() => true}>Play</PlayButton>
-                </div>
+                <Banner/>
             </BrowserHeader>
 
-            <RowShow title="Trending Now" fetchUrl={Requests.trending} />
+            <RowShow title="Trending Now" fetchUrl={Requests.trending}/>
+            <RowShow title="Netflix Originals" fetchUrl={Requests.netflixOriginals}/>
+            <RowShow title="Top Rated" fetchUrl={Requests.topRated}/>
+            <RowShow title="Horror Movies" fetchUrl={Requests.horrorMovies}/>
+            <RowShow title="Action Movies" fetchUrl={Requests.actionMovies}/>
 
-
-            <FooterComponent />
+            <FooterComponent/>
         </>
     )
 }
- 
+
 export default BrowsePage
 
 
@@ -88,6 +117,8 @@ export const HeaderLink = styled.div`
 `
 
 export const BrowseNavbar = styled.nav`
+  position: absolute;
+  padding: 30px 50px;
   max-width: 1850px;
   width: 100%;
   display: flex;
@@ -99,11 +130,9 @@ export const BrowseNavbar = styled.nav`
 
 
 export const BrowserHeader = styled.div`
-  background: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 80% ,rgba(0,0,0,.8) 100%) , url('/img/sp.webp');
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 30px 50px;
   @media (max-width: 550px) {
     padding: 15px 20px;
   }

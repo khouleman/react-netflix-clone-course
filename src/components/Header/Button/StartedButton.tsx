@@ -8,7 +8,7 @@ const StartedButton = ({ children }: PropsType) => {
   const navigate = useNavigate()
 
   const handleClick = () => {
-    navigate('/browse');
+    navigate('/who-is-watching');
     const HeaderElement: HTMLElement | null = document.getElementById('header')
     HeaderElement?.scrollIntoView()
   }
@@ -19,7 +19,7 @@ const StartedButton = ({ children }: PropsType) => {
       <img src='../img/chevron-right.png' alt='Try Now' />
     </Wrapper>
   )
-} 
+}
 
 export const Wrapper = styled.div`
   width: fit-content;

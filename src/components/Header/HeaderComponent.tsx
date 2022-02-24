@@ -13,7 +13,7 @@ const HeaderComponent = ({ children }: PropsType) => {
         marginBottom: "175px",
         marginRight: "auto",
         marginLeft: "auto",
-    }; 
+    };
 
     return (
         <HeaderWrapper>
@@ -24,7 +24,7 @@ const HeaderComponent = ({ children }: PropsType) => {
             {children}
         </HeaderWrapper>
     )
-} 
+}
 
 export const HeaderWrapper = styled.div` 
   background-image : linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%) , url('/img/homescreen.jpg');   
@@ -36,7 +36,7 @@ export const HeaderWrapper = styled.div`
     padding: 15px 20px;
   }
 `
- 
+
 
 interface PropsType {
     children?: ReactNode

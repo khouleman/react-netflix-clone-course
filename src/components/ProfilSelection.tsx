@@ -43,10 +43,6 @@ export default function Profil() {
 
         localStorage.setItem("profiles", JSON.stringify(profiles));
 
-       // console.log("LOCAL" + localStorage.getItem("profiles"));
-
-        console.log(profiles);
-
 
     };
 
@@ -74,4 +70,4 @@ export default function Profil() {
 
         </div>
     );
-} 
+}
