@@ -34,37 +34,38 @@ export default function Register() {
 
     return (
         <div className="login">
-            <HeaderComponent></HeaderComponent>
-            <img src="/img/netflix.svg" alt="netflix" />
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <HeaderComponent>
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
 
-                <FormControl sx={{ m: 1, minWidth: 120 }} >
-                    <TextField
-                        id="outlined-email-input"
-                        label="email"
-                        type="email"
-                        aria-describedby="email-helper-text"
-                        autoComplete="current-email"
-                        required
-                    />
-                    <FormHelperText id="email-helper-text">We'll never share your email.</FormHelperText>
+                    <FormControl sx={{ m: 1, minWidth: 120 }} >
+                        <TextField
+                            id="outlined-email-input"
+                            label="email"
+                            type="email"
+                            aria-describedby="email-helper-text"
+                            autoComplete="current-email"
+                            required
+                        />
+                        <FormHelperText id="email-helper-text">We'll never share your email.</FormHelperText>
 
-                    <TextField
-                        id="outlined-password-input"
-                        label="Password"
-                        type="password"
-                        aria-describedby="password-helper-text"
-                        autoComplete="current-password"
-                        required
-                    />
-                    <FormHelperText id="password-helper-text">We'll never share your password.</FormHelperText>
+                        <TextField
+                            id="outlined-password-input"
+                            label="Password"
+                            type="password"
+                            aria-describedby="password-helper-text"
+                            autoComplete="current-password"
+                            required
+                        />
+                        <FormHelperText id="password-helper-text">We'll never share your password.</FormHelperText>
 
-                    <Link to="/profil">
-                        <Button variant="contained">Sign in</Button>
-                    </Link>
+                        <Link to="/profil">
+                            <Button variant="contained">Sign in</Button>
+                        </Link>
 
-                </FormControl>
-            </div>
+                    </FormControl>
+                </div>
+            </HeaderComponent>
+
         </div>
 
 

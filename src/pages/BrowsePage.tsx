@@ -6,6 +6,9 @@ import Requests from '../components/Requests/Requests';
 import RowShow from '../components/DisplayShow/RowShow';
 import {useNavigate} from "react-router-dom";
 import Banner from "../components/Banner/Banner";
+import SigninButton from "../components/Header/Button/LoginButton";
+import User from "../components/WhosWatching/User/User";
+import UserHeader from "../components/Profile/Header/UserHeader";
 
 
 const BrowsePage = () => {
@@ -39,14 +42,19 @@ const BrowsePage = () => {
             <BrowserHeader>
 
                 <BrowseNavbar>
+                    <LeftNav>
                     <Logo/>
                     <HeaderLink onClick={handleClickHome}>Home</HeaderLink>
                     <HeaderLink onClick={handleClickSeries}>Series</HeaderLink>
                     <HeaderLink onClick={handleClickMovies}>Movies</HeaderLink>
                     <HeaderLink onClick={handleClickNew}>Most watched new releases</HeaderLink>
                     <HeaderLink onClick={handleClickMyList}>My list</HeaderLink>
-
+                    </LeftNav>
+                    <RightNav>
+                        <UserHeader picture="https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png"  name={''}/>
+                    </RightNav>
                 </BrowseNavbar>
+
                 <Banner/>
             </BrowserHeader>
 
@@ -63,6 +71,18 @@ const BrowsePage = () => {
 
 export default BrowsePage
 
+
+export const RightNav = styled.div`
+width: 33%;
+  display: flex;
+justify-content: flex-end;
+`
+
+export const LeftNav = styled.div`
+width: 65%;
+  display: flex;
+justify-content: flex-start;
+`
 
 export const PlayButton = styled.button`
   box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
