@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 
-const BrowsePage = () => {
+const SeriesPage = () => {
 
     const navigate = useNavigate();
     const classes = useStyles();
@@ -89,7 +89,7 @@ const BrowsePage = () => {
         navigate('/my-list');
     }
 
-    // console.log(Requests)
+    console.log("REQUETE" , Requests.seriesTopRated)
 
     return (
         <>
@@ -129,18 +129,19 @@ const BrowsePage = () => {
                 <Banner/>
             </BrowserHeader>
 
-            <RowShow title="Trending Now" fetchUrl={Requests.trending}/>
-            <RowShow title="Netflix Originals" fetchUrl={Requests.netflixOriginals}/>
-            <RowShow title="Top Rated" fetchUrl={Requests.topRated}/>
-            <RowShow title="Horror Movies" fetchUrl={Requests.horrorMovies}/>
-            <RowShow title="Action Movies" fetchUrl={Requests.actionMovies}/>
+            <RowShow title="Top rated Series" fetchUrl={Requests.seriesTopRated}/>
+            <RowShow title="Popular Series" fetchUrl={Requests.seriesPopular}/>
+            {/*<RowShow title="Netflix Originals" fetchUrl={Requests.netflixOriginals}/>*/}
+            {/*<RowShow title="Top Rated" fetchUrl={Requests.topRated}/>*/}
+            {/*<RowShow title="Horror Movies" fetchUrl={Requests.horrorMovies}/>*/}
+            {/*<RowShow title="Action Movies" fetchUrl={Requests.actionMovies}/>*/}
 
             <FooterComponent/>
         </>
     )
 }
 
-export default BrowsePage
+export default SeriesPage
 
 
 export const RightNav = styled.div`

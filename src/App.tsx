@@ -17,6 +17,7 @@ import HomePage from './pages/HomePage';
 import Register from './pages/Register';
 import BrowsePage from './pages/BrowsePage';
 import WhosWatching from "./components/WhosWatching/WhosWatching";
+import SeriesPage from "./pages/SeriesPage";
 
 export default () => {
 
@@ -35,8 +36,10 @@ export default () => {
                     <Route path='/' element={<HomePage />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/browse' element={<BrowsePage />} />
+                    <Route path='/series' element={<SeriesPage />} />
                     <Route path='/who-is-watching' element={<WhosWatching />} />
                     <Route path='/register' element={<Register />} />
+                    <Route path='/new-profile' element={<Register />} />
                     <Route path='/profil' element={<Profil />} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Routes >
