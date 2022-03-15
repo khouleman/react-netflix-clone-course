@@ -18,6 +18,7 @@ import Register from './pages/Register';
 import BrowsePage from './pages/BrowsePage';
 import WhosWatching from "./components/WhosWatching/WhosWatching";
 import SeriesPage from "./pages/SeriesPage";
+import AddProfile from "./pages/AddProfile";
 
 export default () => {
 
@@ -39,7 +40,7 @@ export default () => {
                     <Route path='/series' element={<SeriesPage />} />
                     <Route path='/who-is-watching' element={<WhosWatching />} />
                     <Route path='/register' element={<Register />} />
-                    <Route path='/new-profile' element={<Register />} />
+                    <Route path='/add-profile' element={<AddProfile />} />
                     <Route path='/profil' element={<Profil />} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Routes >

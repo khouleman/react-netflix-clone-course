@@ -6,7 +6,7 @@ function AddUser() {
     const navigate = useNavigate();
 
     function handleClickNewProfile() {
-        navigate('/register');
+        navigate('/add-profile');
     }
 
     return (
