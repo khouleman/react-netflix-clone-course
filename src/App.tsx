@@ -19,6 +19,9 @@ import BrowsePage from './pages/BrowsePage';
 import WhosWatching from "./components/WhosWatching/WhosWatching";
 import SeriesPage from "./pages/SeriesPage";
 import AddProfile from "./pages/AddProfile";
+import MoviesPage from "./pages/MoviesPage";
+import TrendingPage from "./pages/TrendingPage";
+import MyList from "./pages/MyList";
 
 export default () => {
 
@@ -38,6 +41,9 @@ export default () => {
                     <Route path='/login' element={<Login />} />
                     <Route path='/browse' element={<BrowsePage />} />
                     <Route path='/series' element={<SeriesPage />} />
+                    <Route path='/movies' element={<MoviesPage />} />
+                    <Route path='/trending' element={<TrendingPage />} />
+                    <Route path='/my-list' element={<MyList />} />
                     <Route path='/who-is-watching' element={<WhosWatching />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/add-profile' element={<AddProfile />} />

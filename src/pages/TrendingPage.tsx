@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 
-const SeriesPage = () => {
+const TrendingPage = () => {
 
     const navigate = useNavigate();
     const classes = useStyles();
@@ -127,16 +127,17 @@ const SeriesPage = () => {
                 <Banner/>
             </BrowserHeader>
 
-            <RowShow title="Top rated Series" fetchUrl={Requests.seriesTopRated}/>
-            <RowShow title="Popular Series" fetchUrl={Requests.seriesPopular}/>
-            {/*<RowShow title="Newly Created TV Show" fetchUrl={Requests.seriesLatest}/>*/}
+            <RowShow title="Trending of the day" fetchUrl={Requests.trendingDay}/>
+            <RowShow title="Trending of the week" fetchUrl={Requests.trending}/>
+            <RowShow title="Trending in Movies" fetchUrl={Requests.trendingMovie}/>
+            <RowShow title="Trending in Series" fetchUrl={Requests.trendingTv}/>
 
             <FooterComponent/>
         </>
     )
 }
 
-export default SeriesPage
+export default TrendingPage
 
 
 export const RightNav = styled.div`

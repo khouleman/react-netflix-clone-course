@@ -28,9 +28,9 @@ function RowShow({title, fetchUrl}: RowProps) {
         p: 4,
     };
 
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    // const [open, setOpen] = React.useState(false);
+    // const handleOpen = () => setOpen(true);
+    // const handleClose = () => setOpen(false);
 
     useEffect(() => {
 
@@ -62,7 +62,7 @@ function RowShow({title, fetchUrl}: RowProps) {
                                      key={movie.id}
                                      src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                                      alt={movie?.title || movie?.original_title || movie?.name || movie?.original_name}
-                                     onClick={handleOpen}
+                                     // onClick={handleOpen}
                                 />
                                 {/*<Modal*/}
                                 {/*    open={open}*/}

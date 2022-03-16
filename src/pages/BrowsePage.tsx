@@ -64,7 +64,6 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-
 const BrowsePage = () => {
 
     const navigate = useNavigate();
@@ -82,7 +81,7 @@ const BrowsePage = () => {
     }
 
     function handleClickNew() {
-        navigate('/most-watched');
+        navigate('/trending');
     }
 
     function handleClickMyList() {

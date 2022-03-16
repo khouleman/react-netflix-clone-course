@@ -5,9 +5,6 @@ import styled from 'styled-components';
 import Requests from '../components/Requests/Requests';
 import RowShow from '../components/DisplayShow/RowShow';
 import {useNavigate} from "react-router-dom";
-import Banner from "../components/Banner/Banner";
-import SigninButton from "../components/Header/Button/LoginButton";
-import User from "../components/WhosWatching/User/User";
 import UserHeader from "../components/Profile/Header/UserHeader";
 import NotificationsActiveRoundedIcon from '@material-ui/icons/NotificationsActiveRounded';
 import SearchIcon from '@material-ui/icons/Search';
@@ -65,10 +62,11 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 
-const SeriesPage = () => {
+const MyList = () => {
 
     const navigate = useNavigate();
     const classes = useStyles();
+
     function handleClickHome() {
         navigate('/browse');
     }
@@ -91,52 +89,47 @@ const SeriesPage = () => {
 
     return (
         <>
-            <BrowserHeader>
-
-                <BrowseNavbar>
-                    <LeftNav>
+            <BrowseNavbar>
+                <LeftNav>
                     <Logo/>
                     <HeaderLink onClick={handleClickHome}>Home</HeaderLink>
                     <HeaderLink onClick={handleClickSeries}>Series</HeaderLink>
                     <HeaderLink onClick={handleClickMovies}>Movies</HeaderLink>
                     <HeaderLink onClick={handleClickNew}>Most watched new releases</HeaderLink>
                     <HeaderLink onClick={handleClickMyList}>My list</HeaderLink>
-                    </LeftNav>
-                    <RightNav>
-                        <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                                <SearchIcon />
-                            </div>
-                            <InputBase
-                                placeholder="Search…"
-                                classes={{
-                                    root: classes.inputRoot,
-                                    input: classes.inputInput,
-                                }}
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
+                </LeftNav>
+                <RightNav>
+                    <div className={classes.search}>
+                        <div className={classes.searchIcon}>
+                            <SearchIcon/>
                         </div>
-                        <div className={classes.root}>
-                            <Button variant="outlined">Direct</Button>
-                        </div>
-                        <NotificationsActiveRoundedIcon />
-                        <UserHeader picture="https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png"  name={''}/>
-                    </RightNav>
-                </BrowseNavbar>
+                        <InputBase
+                            placeholder="Search…"
+                            classes={{
+                                root: classes.inputRoot,
+                                input: classes.inputInput,
+                            }}
+                            inputProps={{'aria-label': 'search'}}
+                        />
+                    </div>
+                    <div className={classes.root}>
+                        <Button variant="outlined">Direct</Button>
+                    </div>
+                    <NotificationsActiveRoundedIcon/>
+                    <UserHeader
+                        picture="https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png"
+                        name={''}/>
+                </RightNav>
+            </BrowseNavbar>
 
-                <Banner/>
-            </BrowserHeader>
-
-            <RowShow title="Top rated Series" fetchUrl={Requests.seriesTopRated}/>
-            <RowShow title="Popular Series" fetchUrl={Requests.seriesPopular}/>
-            {/*<RowShow title="Newly Created TV Show" fetchUrl={Requests.seriesLatest}/>*/}
+            <RowShow title="My list" fetchUrl={Requests.horrorMovies}/>
 
             <FooterComponent/>
         </>
     )
 }
 
-export default SeriesPage
+export default MyList
 
 
 export const RightNav = styled.div`
@@ -173,29 +166,6 @@ export const PlayButton = styled.button`
   }
 `
 
-export const Title = styled.h1`
-  color: white;
-  max-width: 640px;
-  font-size: 50px;
-  font-weight: 700; 
-  @media (max-width: 550px) {
-    font-size: 30px;
-  }
-`
-
-
-export const SubTitle = styled.h2`
-  max-width: 640px;
-  font-size: 22px;
-  font-weight: 500;
-  line-height: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-  @media (max-width: 550px) {
-    font-size: 18px;
-  }
-`
-
-
 export const HeaderLink = styled.div`
   padding: 5px;
   color: #fff;
@@ -205,23 +175,11 @@ export const HeaderLink = styled.div`
 `
 
 export const BrowseNavbar = styled.nav`
-  position: absolute;
   padding: 20px 50px;
   max-width: 1850px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 175px;
   margin-right: auto;
   margin-left: auto;
-`
-
-
-export const BrowserHeader = styled.div`
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  @media (max-width: 550px) {
-    padding: 15px 20px;
-  }
 `
