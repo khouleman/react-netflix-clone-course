@@ -11,7 +11,7 @@ function UserHeader({ name, picture }: UserProps) {
     const navigate = useNavigate();
 
     function handleClickHome() {
-        navigate('/browse');
+        navigate('/who-is-watching');
     }
 
     return (
