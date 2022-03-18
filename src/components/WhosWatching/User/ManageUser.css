@@ -1,15 +1,16 @@
-.avatar__wrapper {
+.avatar__wrapper__manage {
     display: flex;
     flex-direction: column;
     cursor: pointer;
     margin-right: 20px;
+    align-items: center;
 }
 
-.avatar__wrapper img:hover {
+.avatar__wrapper__manage__image:hover {
     border: 3px solid lightgrey;
 }
 
-.avatar__wrapper img {
+.avatar__wrapper__manage__image {
     width: 8vw;
     max-width: 200px;
     min-width: 84px;
@@ -21,10 +22,28 @@
     box-sizing: border-box;
     position: relative;
 
+    z-index: 2;
+    filter: opacity(50%);
     background-repeat: no-repeat;
     background-size: cover;
 
     border-radius: 4px;
+}
+
+.edit_icon {
+    z-index: 1;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    width: 8vw;
+    max-width: 50px;
+    min-width: 50px;
+
+    height: 8vw;
+    max-height: 200px;
+    min-height: 84px;
+
 }
 
 .profile__name {

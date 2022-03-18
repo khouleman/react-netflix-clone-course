@@ -6,6 +6,12 @@ import {useNavigate} from "react-router-dom";
 
 function WhosWatching() {
 
+    const navigate = useNavigate();
+
+    function handleClickNewProfile() {
+        navigate('/manage-profile');
+    }
+
     return (
         <div className="whosWatching">
             <img className="nav__logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" />
@@ -22,7 +28,7 @@ function WhosWatching() {
                     <AddUser />
                 </div>
 
-                <a aria-label="MANAGE PROFILES" className="manage-profile-button">MANAGE PROFILES</a>
+                <a aria-label="MANAGE PROFILES" className="manage-profile-button" onClick={handleClickNewProfile}>MANAGE PROFILES</a>
             </div>
         </div>
     );

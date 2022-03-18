@@ -22,6 +22,8 @@ import AddProfile from "./pages/AddProfile";
 import MoviesPage from "./pages/MoviesPage";
 import TrendingPage from "./pages/TrendingPage";
 import MyList from "./pages/MyList";
+import ManageProfile from "./pages/ManageProfile";
+import EditProfile from "./pages/EditProfile";
 
 export default () => {
 
@@ -45,6 +47,8 @@ export default () => {
                     <Route path='/trending' element={<TrendingPage />} />
                     <Route path='/my-list' element={<MyList />} />
                     <Route path='/who-is-watching' element={<WhosWatching />} />
+                    <Route path='/manage-profile' element={<ManageProfile />} />
+                    <Route path='/manage-profile/edit' element={<EditProfile />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/add-profile' element={<AddProfile />} />
                     <Route path='/profil' element={<Profil />} />
