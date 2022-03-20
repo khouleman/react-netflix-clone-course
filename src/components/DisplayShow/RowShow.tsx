@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import axios from "../Requests/Axios";
 import "./RowShow.css";
+import styled from "styled-components";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {Navigation, Pagination} from "swiper";
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import RowItem from "./RowItem";
+import {v4 as uuidv4} from 'uuid';
+
 
 interface RowProps {
     title: string;
@@ -28,10 +29,6 @@ function RowShow({title, fetchUrl}: RowProps) {
         p: 4,
     };
 
-    // const [open, setOpen] = React.useState(false);
-    // const handleOpen = () => setOpen(true);
-    // const handleClose = () => setOpen(false);
-
     useEffect(() => {
 
         async function fetchData() {
@@ -50,39 +47,29 @@ function RowShow({title, fetchUrl}: RowProps) {
             <h2>{title}</h2>
             <Swiper
                 modules={[Navigation, Pagination]}
-                spaceBetween={20}
-                slidesPerView={9}
+                spaceBetween={30}
+                slidesPerView={11}
                 navigation
+                className={"row__line"}
             >
-                {/*<div className="row__posters">*/}
+                    {movies.map((movie: any) => (
+                        <SwiperSlide >
+                        <RowItem key={uuidv4()} id={movie.id} mediaType={movie.media_type} src={movie.poster_path}
+                                 title={movie?.title || movie?.original_title || movie?.name || movie?.original_name || ""}/>
 
-                {movies.map((movie: any) => (
-                            <SwiperSlide >
-                                <img className="row__poster"
-                                     key={movie.id}
-                                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                                     alt={movie?.title || movie?.original_title || movie?.name || movie?.original_name}
-                                     // onClick={handleOpen}
-                                />
-                                {/*<Modal*/}
-                                {/*    open={open}*/}
-                                {/*    onClose={handleClose}*/}
-                                {/*    aria-labelledby="parent-modal-title"*/}
-                                {/*    aria-describedby="parent-modal-description"*/}
-                                {/*>*/}
-                                {/*    <Box sx={style}>*/}
-                                {/*        <Typography id="modal-modal-title" variant="h6" component="h2">*/}
-                                {/*            {movie?.title || movie?.original_title || movie?.name || movie?.original_name}*/}
-                                {/*        </Typography>*/}
-                                {/*    </Box>*/}
-                                {/*</Modal>*/}
-                            </SwiperSlide>
-                    )
-                )}
-                {/*</div>*/}
+                        </SwiperSlide> ))}
             </Swiper>
         </div>
     );
 }
+
+export const Image = styled.img`
+max-height: 250px;
+
+&:hover {
+    transform: scale(1.09);
+  } 
+`
+
 
 export default RowShow;

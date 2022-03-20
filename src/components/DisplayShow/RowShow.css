@@ -25,3 +25,31 @@
 .row__poster:hover {
     transform: scale(1.1);
 }
+
+.row__line {
+    display: flex;
+    height: 270px;
+}
+
+.select__season {
+    border: 1px solid white !important;
+    border-radius: 5px;
+    color:white;
+}
+
+.buttons__header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.play__button {
+    margin-right: 15px;
+}
+
+.header__buttons__end {
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+    height: 32px;
+}
