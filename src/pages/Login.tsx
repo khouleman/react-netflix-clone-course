@@ -30,6 +30,10 @@ export default function Login() {
         HeaderElement?.scrollIntoView()
     }
 
+    const handleRegisterClick = () => {
+        navigate('/register');
+    }
+
 
     return (
         <div>
@@ -88,8 +92,8 @@ export default function Login() {
                             <p  style={{color: "grey"}}>
                                 {'New to Netflix? '}
                             </p>
-                            <Link href="#" underline="hover" style={{color: "white"}}
-                                  sx={{display: 'flex', alignItems: 'center', paddingLeft: "10px"}}>
+                            <Link onClick={handleRegisterClick} underline="hover" style={{color: "white"}}
+                                  sx={{display: 'flex', alignItems: 'center', paddingLeft: "10px", cursor: "pointer"}}>
                                 {'Sign up now'}
                             </Link>
                         </LoginNewInfo>

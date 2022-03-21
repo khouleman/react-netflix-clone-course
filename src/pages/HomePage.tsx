@@ -28,15 +28,15 @@ const HomePage = () => {
       <HeaderComponent>
 
         <div>
-          <div style={title}>Films, séries TV et bien plus en illimité.
+          <div style={title}>Unlimited movies, TV shows and more.
           </div>
         </div>
         <div style={text}>
-          Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.
+          Ready to watch Netflix? Enter your email address to subscribe or reactivate your subscription.
         </div>
         <Wrapper >
-          <EmailInput placeholder='Adresse e-mail' />
-          <StartedButton>Commencer</StartedButton>
+          <EmailInput placeholder='E-mail address' />
+          <StartedButton>Start</StartedButton>
         </Wrapper >
 
 

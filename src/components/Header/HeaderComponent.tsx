@@ -19,7 +19,7 @@ const HeaderComponent = ({ children }: PropsType) => {
         <HeaderWrapper>
             <div style={navbar}>
                 <Logo />
-                <SigninButton>S'identifier</SigninButton>
+                <SigninButton>Login</SigninButton>
             </div>
             {children}
         </HeaderWrapper>

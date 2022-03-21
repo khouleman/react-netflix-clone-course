@@ -43,14 +43,34 @@ export default function CreateAccount() {
                         <FormControl sx={{m: 1, minWidth: 120, input: {color: 'white'},}}>
                             <TextField
                                 id="outlined-email-input"
-                                label="Email or phone number"
-                                type="email"
+                                label="Name"
+                                type="text"
                                 sx={{input: {color: 'grey'}, label: {color: 'white'}, div: {color: 'white'}}}
-                                aria-describedby="email-helper-text"
-                                autoComplete="current-email"
                                 required
                             />
-
+                            <TextField
+                                id="outlined-email-input"
+                                label="Firstname"
+                                type="text"
+                                sx={{input: {color: 'grey'}, label: {color: 'white'}, div: {color: 'white'}}}
+                                required
+                            />
+                            <TextField
+                                id="outlined-email-input"
+                                label="Tel"
+                                type="text"
+                                sx={{input: {color: 'grey'}, label: {color: 'white'}, div: {color: 'white'}}}
+                                required
+                            />
+                            <TextField
+                                id="outlined-password-input"
+                                label="Email"
+                                type="email"
+                                sx={{input: {color: 'white'}, label: {color: 'white'}}}
+                                aria-describedby="password-helper-text"
+                                autoComplete="current-password"
+                                required
+                            />
                             <TextField
                                 id="outlined-password-input"
                                 label="Password"

@@ -122,7 +122,7 @@ const MyList = () => {
                 </RightNav>
             </BrowseNavbar>
 
-            <RowShow title="My list" fetchUrl={Requests.horrorMovies}/>
+            <RowShow title="My list" fetchUrl={Requests.seriesPopular}/>
 
             <FooterComponent/>
         </>

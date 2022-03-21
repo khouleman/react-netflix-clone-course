@@ -4,29 +4,29 @@ import styled from 'styled-components';
 const FooterComponent = () => {
   return (
     <Footer>
-      <TitleLink>Questions? Contactez-vous.</TitleLink>
+      <TitleLink>Questions? Contact us.</TitleLink>
       <Row>
         <Column>
-          <Link href='#'>Audio et sous-titres</Link>
-          <Link href='#'>Presse</Link>
-          <Link href='#'>Confidentialité</Link>
-          <Link href='#'>Nous contacter</Link>
+          <Link href='#'>Audio and subtitles</Link>
+          <Link href='#'>Press</Link>
+          <Link href='#'>Privacy</Link>
+          <Link href='#'>Contact us</Link>
         </Column>
         <Column>
           <Link href='#'>Audiodescription</Link>
-          <Link href='#'>Relations Investisseurs</Link>
-          <Link href='#'>Informations légales</Link> 
+          <Link href='#'>Investor Relations</Link>
+          <Link href='#'>Legal information</Link>
         </Column>
         <Column>
-          <Link href='#'>Centre d'aide</Link>
-          <Link href='#'>Recrutement</Link>
-          <Link href='#'>Préférences de cookies</Link>
+          <Link href='#'>Need help ?</Link>
+          <Link href='#'>Recruitment</Link>
+          <Link href='#'>Cookie preferences</Link>
           <Link href='#'>Netflix Originals</Link>
         </Column>
         <Column>
-          <Link href='#'>Cartes cadeaux</Link>
-          <Link href='#'>Conditions d'utilisation</Link>
-          <Link href='#'>Mentions légales</Link>
+          <Link href='#'>Gift cards</Link>
+          <Link href='#'>Terms of use</Link>
+          <Link href='#'>Legal Notice</Link>
         </Column>
       </Row>
     </Footer>
