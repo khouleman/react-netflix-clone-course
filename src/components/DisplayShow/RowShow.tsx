@@ -17,17 +17,6 @@ interface RowProps {
 function RowShow({title, fetchUrl}: RowProps) {
     const [movies, setMovies] = useState([]);
 
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        backgroundColor: 'black',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-    };
 
     useEffect(() => {
 
@@ -62,14 +51,5 @@ function RowShow({title, fetchUrl}: RowProps) {
         </div>
     );
 }
-
-export const Image = styled.img`
-max-height: 250px;
-
-&:hover {
-    transform: scale(1.09);
-  } 
-`
-
 
 export default RowShow;

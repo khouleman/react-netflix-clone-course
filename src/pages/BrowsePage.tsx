@@ -128,8 +128,8 @@ const BrowsePage = () => {
                 <Banner/>
             </BrowserHeader>
 
-            <RowShow title="Trending Now" fetchUrl={Requests.trending}/>
             <RowShow title="Netflix Originals" fetchUrl={Requests.netflixOriginals}/>
+            <RowShow title="Trending Now" fetchUrl={Requests.trending}/>
             <RowShow title="Top Rated" fetchUrl={Requests.topRated}/>
             <RowShow title="Horror Movies" fetchUrl={Requests.horrorMovies}/>
             <RowShow title="Action Movies" fetchUrl={Requests.actionMovies}/>
