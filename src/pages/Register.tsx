@@ -30,6 +30,9 @@ export default function CreateAccount() {
         const HeaderElement: HTMLElement | null = document.getElementById('header')
         HeaderElement?.scrollIntoView()
     }
+    const handleSignInClick = () => {
+        navigate('/login');
+    }
 
 
     return (
@@ -107,11 +110,11 @@ export default function CreateAccount() {
                         </Link>
                         <LoginNewInfo>
                             <p  style={{color: "grey"}}>
-                                {'New to Netflix? '}
+                                {'Already registered? '}
                             </p>
-                            <Link href="#" underline="hover" style={{color: "white"}}
+                            <Link  onClick={handleSignInClick} underline="hover" style={{color: "white"}}
                                   sx={{display: 'flex', alignItems: 'center', paddingLeft: "10px"}}>
-                                {'Sign up now'}
+                                {'Sign in now'}
                             </Link>
                         </LoginNewInfo>
                     </LoginForm>
