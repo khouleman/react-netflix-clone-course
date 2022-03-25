@@ -8,10 +8,7 @@ interface UserProps {
 }
 
 function AddNewProfile({ name, picture }: UserProps) {
-    // const navigate = useNavigate();
-    // function handleClick() {
-    //     navigate('/browse');
-    // }
+
     const inputFile = useRef(null)
 
     const onButtonClick = () => {

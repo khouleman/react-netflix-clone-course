@@ -17,13 +17,7 @@ export interface UserInterface {
 
 export default function Login() {
 
-    // const [emailAddress, setEmailAddress] = useState('');
-    // const [password, setPassword] = useState('');
-    //
     const navigate = useNavigate();
-    //
-    // const IsInvalid = password === '' || emailAddress === '';
-
     const handleLoginClick = () => {
         navigate('/browse');
         const HeaderElement: HTMLElement | null = document.getElementById('header')

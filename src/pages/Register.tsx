@@ -18,12 +18,7 @@ export interface NewUserInterface {
 
 export default function CreateAccount() {
 
-    // const [emailAddress, setEmailAddress] = useState('');
-    // const [password, setPassword] = useState('');
-    //
     const navigate = useNavigate();
-    //
-    // const IsInvalid = password === '' || emailAddress === '';
 
     const handleLoginClick = () => {
         navigate('/browse');

@@ -30,7 +30,6 @@ function Banner() {
 
     }, []);
 
-    // console.log("Banner", movie);
 
     return(
         <header className="banner" style={{
